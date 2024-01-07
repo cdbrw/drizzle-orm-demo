@@ -1,0 +1,50 @@
+GET http://localhost:3000/api/posts
+
+###
+
+GET http://localhost:3000/api/posts/<id>
+
+###
+
+POST http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+  "title": "Subscribe to CodeBrew",
+  "content": "New videos coming out soon!",
+  "authorId": "<id>"
+}
+
+###
+
+PATCH http://localhost:3000/api/posts/<id>
+Content-Type: application/json
+
+{
+  "title": "Like the video",
+  "content": "helps the channel"
+}
+
+###
+
+DELETE http://localhost:3000/api/posts
+Content-Type: application/json
+
+{
+  "id": "<id>"
+}
+
+###
+
+POST http://localhost:3000/api/users
+Content-Type: application/json
+
+{
+  "name": "CodeBrew"
+}
+
+###
+
+GET http://localhost:3000/api/users/<id>/posts
+
+###

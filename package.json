@@ -4,25 +4,35 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon index.ts",
-    "start": "node dist/index.js",
-    "build": "npx tsc"
+    "dev": "nodemon src/index.ts",
+    "start": "node dist/src/index.js",
+    "build": "npx tsc",
+    "introspect": "drizzle-kit introspect:pg --config=drizzle.config.ts",
+    "generate": "drizzle-kit generate:pg --config=drizzle.config.ts",
+    "migrate": "tsx -r dotenv/config src/db/migrate.ts",
+    "studio": "drizzle-kit studio"
   },
   "author": "CodeBrew",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.29.3",
+    "drizzle-zod": "^0.5.1",
     "express": "^4.18.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.11.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
     "@types/node": "^20.10.6",
+    "@types/pg": "^8.10.9",
+    "drizzle-kit": "^0.20.10",
     "nodemon": "^3.0.2",
     "ts-node": "^10.9.2",
+    "tsx": "^4.7.0",
     "typescript": "^5.3.3"
   }
 }
